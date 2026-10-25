@@ -1,6 +1,6 @@
 import csv
 
-def create_dummy_csv(file_path:str):
+def create_dummy_csv(file_path:str) -> None:
     """ creates a dummy csv file with 10 rows of random data."""
     with open(file_path,'w', newline='') as f:
         writer = csv.writer(f)
@@ -20,9 +20,9 @@ def create_dummy_csv(file_path:str):
 def read_csv(file_path: str) -> list:
     """ reads a csv file and returns a list of dictionaries."""
     data = []
-    with open(file_path) as f:
+    with open(file_path, mode = 'r', encoding = 'utf-8') as f:
         reader = csv.DictReader(f)
-        for row in reader:
-            data.append(row)    
         
+        data = [row for row in reader]
+
     return data

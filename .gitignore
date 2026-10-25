@@ -2,3 +2,4 @@
 data/.
 .__pycach__/
 .ipynb_checkpoints/
+*data
